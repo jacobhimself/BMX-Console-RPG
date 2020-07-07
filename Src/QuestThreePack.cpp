@@ -26,13 +26,14 @@ void QuestThreePack::introduction()
 void QuestThreePack::hitSet()
 {
 	printTrickList();
-	int currentJumpNum = 0;
-	while (currentJumpNum < setLength)
+	int currentJumpNum = 1;
+	while (currentJumpNum <= setLength)
 	{
 		hitJump(currentJumpNum);
 		currentJumpNum++;
 	}
 	cout << "congratulations, you made it through the set!!" << endl;
+	cout << endl;
 
 }
 
@@ -45,6 +46,8 @@ void QuestThreePack::printTrickList()
 	cout << "4: Nothing " << endl;
 	cout << "5: Barspin " << endl;
 	cout << "6: Tailwhip " << endl;
+	cout << endl;
+	cout << endl;
 }
 
 void QuestThreePack::hitJump(int jumpNum)
@@ -54,4 +57,6 @@ void QuestThreePack::hitJump(int jumpNum)
 	cin >> currentTrick;
 	currentTrick = currentTrick % std::size(this->trickList);
 	cout << "You selected " << trickList[currentTrick] << " on jump " << jumpNum << ". " << endl;
+	cout << endl;
+	cout << endl;
 }

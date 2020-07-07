@@ -139,15 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Character.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="QuestThreePack.cpp" />
+    <ClCompile Include="Src\Character.cpp" />
+    <ClCompile Include="Src\Game.cpp" />
+    <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="Src\QuestThreePack.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="QuestThreePack.h" />
+    <ClInclude Include="Src\Character.h" />
+    <ClInclude Include="Src\Game.h" />
+    <ClInclude Include="Src\QuestThreePack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
