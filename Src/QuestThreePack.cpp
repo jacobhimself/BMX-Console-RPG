@@ -48,6 +48,7 @@ void QuestThreePack::printTrickList()
 	cout << "6: Tailwhip " << endl;
 	cout << endl;
 	cout << endl;
+	
 }
 
 void QuestThreePack::hitJump(int jumpNum)

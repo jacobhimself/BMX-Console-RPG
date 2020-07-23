@@ -23,8 +23,8 @@ public:
 	inline const int& getExpNext() const { return this->expNext; }
 	
 	inline const int& getStrength() const { return this->strength; }
-	inline const int& getTricks() const { return this->tricks; }
-	inline const int& getStyle() const { return this->style; }
+	inline const int& getTrickStat() const { return this->trickStat; }
+	inline const int& getStyleStat() const { return this->styleStat; }
 	inline const int& getSpeed() const { return this->speed; }
 	inline const int& getBoost() const { return this->boost; }
 	inline const int& getVitality() const { return this->vitality; }
@@ -50,13 +50,15 @@ private:
 
 	std::string name;
 	int level;
+	int trickStat;
+	int styleStat;
 	int exp;
 	int expNext;
 
 	int strength;
-	int tricks;
+	//int tricks;
 	int speed;
-	int style;
+	//int style;
 	int boost;
 	int vitality;
 	int charisma;

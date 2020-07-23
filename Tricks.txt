@@ -1,0 +1,3 @@
+Tabletop, 1, 5,
+No Hander, 2, 8,
+Tailwhip, 3, 10,
