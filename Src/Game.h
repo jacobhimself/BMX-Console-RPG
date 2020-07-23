@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Character.h"
 #include "QuestThreePack.h"
+#include "Trick.h"
+#include "GameIO.h"
 #include <vector>
 
 class Game
@@ -21,12 +23,14 @@ public:
 	void createNewCharacter();
 
 
+
 	//Accessors
 	inline bool isPlaying() const { return this->playing;  }
 
 	//Modifiers
 
 private:
+	vector<Trick> trickList;
 	int choice;
 	bool playing;
 

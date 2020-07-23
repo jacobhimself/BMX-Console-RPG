@@ -1,4 +1,5 @@
 #include "Game.h"
+
 using namespace std;
 
 Game::Game()
@@ -6,6 +7,7 @@ Game::Game()
 	choice = 0;
 	playing = true;
 	activeCharacter = 0;
+	
 }
 
 Game::~Game()
@@ -16,6 +18,8 @@ Game::~Game()
 void Game::initGame()
 {
 	createNewCharacter();
+	GameIO gIO;
+	trickList = gIO.LoadTricks();
 }
 
 void Game::mainMenu()
@@ -30,6 +34,7 @@ void Game::mainMenu()
 	cout << "6: Create New Character" << endl;
 	cout << "7: Save Characters" << endl;
 	cout << "8: Load Characters" << endl;
+	cout << "9: Test Functions" << endl;
 
 	cout << endl << "Choice" << endl;
 	cin >> choice;
@@ -69,7 +74,13 @@ void Game::mainMenu()
 	case 8:
 		//loadCharacters();
 		break;
-
+	case 9: {
+		//test functions
+		/*GameIO gIO;
+		gIO.LoadTricks();*/
+		
+		break;
+	}
 		//
 	default:
 		break;
@@ -78,10 +89,10 @@ void Game::mainMenu()
 
 void Game::createNewCharacter()
 {
-	std::string name;
+	std::string name = "Jacob";
 
-	std::cout << "Enter name for character: ";
-	std::getline(std::cin, name);
+	//std::cout << "Enter name for character: ";
+	//std::getline(std::cin, name);
 
 	characters.push_back(Character());
 	activeCharacter = characters.size() - 1;

@@ -12,9 +12,9 @@ Character::Character()
 	this->expNext = 0;
 
 	this->strength = 0;
-	this->tricks = 0;
+	this->trickStat = 0;
 	this->speed = 0;
-	this->style = 0;
+	this->styleStat = 0;
 	this->boost = 0;
 	this->vitality = 0;
 	this->charisma = 0;
@@ -54,8 +54,8 @@ void Character::printStats()
 	cout << endl;
 
 	cout << "Strength = " << this->strength << endl;
-	cout << "Tricks = " << this->tricks << endl;
-	cout << "Style = " << this->style << endl;
+	cout << "Trick Stat = " << this->trickStat << endl;
+	cout << "Style Stat = " << this->styleStat << endl;
 	cout << "Boost = " << this->boost << endl;
 	cout << "Vitality = " << this->vitality << endl;
 	cout << "Charisma = " << this->charisma << endl;
@@ -82,6 +82,8 @@ void Character::initialise(const std::string name)
 	this->yPos = 0.0;
 
 	this->name = name;
+	this->trickStat = 10;
+	this->styleStat = 1;
 	this->level = 1;
 	this->exp = 0;
 	this->expNext = static_cast<int>((50 / 3) * (pow(level, 3) -
@@ -89,9 +91,9 @@ void Character::initialise(const std::string name)
 		(17 * level) - 11));
 
 	this->strength = 0;
-	this->tricks = 0;
+	//this->tricks = 0;
 	this->speed = 0;
-	this->style = 0;
+	//this->style = 0;
 	this->boost = 0;
 	this->vitality = 0;
 	this->charisma = 0;
