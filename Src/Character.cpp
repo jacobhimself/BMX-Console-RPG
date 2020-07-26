@@ -81,6 +81,8 @@ void Character::initialise(const std::string name)
 	this->xPos = 0.0;
 	this->yPos = 0.0;
 
+	this->masterTrickListIndices = { 1,3,5 };
+
 	this->name = name;
 	this->trickStat = 10;
 	this->styleStat = 1;
@@ -129,4 +131,28 @@ void Character::levelUp()
 		this->statPoints++;
 		this->skillPoints++;
 	}
+}
+
+void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
+{
+	//Print Trick Vector for player to see
+		for (unsigned int i = 0; i < trickListIn.size(); i++)
+		{
+			cout << i;
+			trickListIn[i].printTrick();
+			cout << endl;
+		}
+
+		for (unsigned int i = 0; i < masterTrickListIndices.size(); i++)
+		{
+			playerTrickList.push_back(trickListIn[masterTrickListIndices[i]]);
+		}
+
+		cout << "Player Tricks" << endl;
+		for (unsigned int i = 0; i < playerTrickList.size(); i++)
+		{
+			cout << i;
+			playerTrickList[i].printTrick();
+			cout << endl;
+		}
 }

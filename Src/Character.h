@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
+#include "Trick.h"
 
 class Character
 {
@@ -13,38 +15,43 @@ public:
 	void initialise(const std::string name);
 	void levelUp();
 
+	//Setters
+	void LoadPlayerTricks(vector<Trick> trickListIn);
+
 	//Accessors
-	inline const double& getXPos() const { return this->xPos; }
-	inline const double& getyPos() const { return this->yPos; }
+	/*inline const double& getXPos() const { return this->xPos; }
+	inline const double& getyPos() const { return this->yPos; }*/
 
 	inline const std::string& getName() const { return this->name; }
 	inline const int& getLevel() const { return this->level; }
 	inline const int& getExp() const { return this->exp; }
 	inline const int& getExpNext() const { return this->expNext; }
 	
-	inline const int& getStrength() const { return this->strength; }
+	/*inline const int& getStrength() const { return this->strength; }
 	inline const int& getTrickStat() const { return this->trickStat; }
 	inline const int& getStyleStat() const { return this->styleStat; }
 	inline const int& getSpeed() const { return this->speed; }
 	inline const int& getBoost() const { return this->boost; }
 	inline const int& getVitality() const { return this->vitality; }
-	inline const int& getCharisma() const { return this->charisma; }
+	inline const int& getCharisma() const { return this->charisma; }*/
 
-	inline const int& getBarrowSkill() const { return this->barrowSkill; }
+	/*inline const int& getBarrowSkill() const { return this->barrowSkill; }
 	inline const int& getStackSkill() const { return this->stackSkill; }
 	inline const int& getShapeSkill() const { return this->shapeSkill; }
-	inline const int& getVegetationSkill() const { return this->vegetationSkill; }
+	inline const int& getVegetationSkill() const { return this->vegetationSkill; }*/
 
-	inline const int& getHP() const { return this->hp; }
+	/*inline const int& getHP() const { return this->hp; }
 	inline const int& getHPMax() const { return this->hpMax; }
 	inline const int& getStamina() const { return this->stamina; }
-	inline const int& getStaminaMax() const { return this->staminaMax; }
+	inline const int& getStaminaMax() const { return this->staminaMax; }*/
 
-	inline const int& getStatPoints() const { return this->statPoints; }
-	inline const int& getSkillPoints() const { return this->skillPoints; }
+	/*inline const int& getStatPoints() const { return this->statPoints; }
+	inline const int& getSkillPoints() const { return this->skillPoints; }*/
 	//Modifiers
 
 private:
+	vector<Trick> playerTrickList;
+	vector<int> masterTrickListIndices;
 	double xPos;
 	double yPos;
 

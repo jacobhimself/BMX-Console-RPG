@@ -78,6 +78,8 @@ void Game::mainMenu()
 		//test functions
 		/*GameIO gIO;
 		gIO.LoadTricks();*/
+
+		characters[0].LoadPlayerTricks(trickList);
 		
 		break;
 	}
