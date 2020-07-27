@@ -135,19 +135,22 @@ void Character::levelUp()
 
 void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
 {
-	//Print Trick Vector for player to see
+		//Print Trick Vector for player to see
 		for (unsigned int i = 0; i < trickListIn.size(); i++)
 		{
-			cout << i;
+			cout << "Trick Index: " << i << endl;
 			trickListIn[i].printTrick();
 			cout << endl;
 		}
 
+		//Using an array of indices from the main list, populate the player tricklist
 		for (unsigned int i = 0; i < masterTrickListIndices.size(); i++)
 		{
 			playerTrickList.push_back(trickListIn[masterTrickListIndices[i]]);
 		}
 
+
+		//Print the player trick list
 		cout << "Player Tricks" << endl;
 		for (unsigned int i = 0; i < playerTrickList.size(); i++)
 		{
@@ -155,4 +158,53 @@ void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
 			playerTrickList[i].printTrick();
 			cout << endl;
 		}
+}
+
+void Character::UpdatePlayerTricks(vector<Trick> trickListIn)
+{
+	cout << "Congratulations, " << this->getName() << ", you have earned a new trick slot." << endl;
+	cout << "Choose from the tricks shown below to add a new trick to your trick list." << endl;
+	//Print Trick Vector for player to see
+	for (unsigned int i = 0; i < trickListIn.size(); i++)
+	{
+		cout << "Trick Index: " << i << endl;
+		trickListIn[i].printTrick();
+		cout << endl;
+	}
+
+	bool validChoice = false;
+	int choice;
+	while (!validChoice)
+	{
+	cout << "Enter the index of your trick to add it to your trick list" << endl;
+	cin >> choice;
+
+	if (find(masterTrickListIndices.begin(), masterTrickListIndices.end(), choice) != masterTrickListIndices.end())
+	{
+		cout << "You already have this trick, select another trick" << endl;
+	}
+	else
+	{
+		if (choice < trickListIn.size() && choice >= 0)
+		{
+			playerTrickList.push_back(trickListIn[choice]);
+			masterTrickListIndices.push_back(choice);
+			cout << "You added " << trickListIn[choice].getName() << endl << endl;
+			validChoice = true;
+		}
+		else
+		{
+			cout << "You've entered an invalid trick index. Please try again" << endl;
+		}
+	}
+	}
+}
+
+void Character::printTricks()
+{
+	for (unsigned int i = 0; i < playerTrickList.size(); i++)
+	{
+		cout << playerTrickList[i].getName() << endl;
+		cout << endl;
+	}
 }

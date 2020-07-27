@@ -73,6 +73,7 @@ void Game::mainMenu()
 		//Load Characters
 	case 8:
 		//loadCharacters();
+		characters[0].printTricks();
 		break;
 	case 9: {
 		//test functions
@@ -80,6 +81,7 @@ void Game::mainMenu()
 		gIO.LoadTricks();*/
 
 		characters[0].LoadPlayerTricks(trickList);
+		characters[0].UpdatePlayerTricks(trickList);
 		
 		break;
 	}

@@ -15,6 +15,9 @@ public:
 	bool executeTrick(int riderTrickSkill);
 	void printTrick();
 
+	//Getters
+	inline string getName() { return this->name; }
+
 private:
 	string name;
 	int level;

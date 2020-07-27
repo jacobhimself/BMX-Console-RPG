@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Trick.h"
 
 class Character
@@ -17,6 +18,7 @@ public:
 
 	//Setters
 	void LoadPlayerTricks(vector<Trick> trickListIn);
+	void UpdatePlayerTricks(vector<Trick> trickListIn);
 
 	//Accessors
 	/*inline const double& getXPos() const { return this->xPos; }
@@ -26,7 +28,8 @@ public:
 	inline const int& getLevel() const { return this->level; }
 	inline const int& getExp() const { return this->exp; }
 	inline const int& getExpNext() const { return this->expNext; }
-	
+	//inline const vector<Trick>& getTrickList() const { return this->playerTrickList; }
+
 	/*inline const int& getStrength() const { return this->strength; }
 	inline const int& getTrickStat() const { return this->trickStat; }
 	inline const int& getStyleStat() const { return this->styleStat; }
@@ -47,8 +50,10 @@ public:
 
 	/*inline const int& getStatPoints() const { return this->statPoints; }
 	inline const int& getSkillPoints() const { return this->skillPoints; }*/
-	//Modifiers
-
+	
+	//Debug Helpers
+	//Used to debug and make sure update player tricks is working
+	//void printTricks();
 private:
 	vector<Trick> playerTrickList;
 	vector<int> masterTrickListIndices;
