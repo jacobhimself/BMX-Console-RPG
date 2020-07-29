@@ -53,40 +53,40 @@ public:
 	
 	//Debug Helpers
 	//Used to debug and make sure update player tricks is working
-	//void printTricks();
+	void printTricks();
 private:
 	vector<Trick> playerTrickList;
-	vector<int> masterTrickListIndices;
-	double xPos;
-	double yPos;
+	vector<int> masterTrickListIndices; //Used to load tricks from master trick list
+	/*double xPos;
+	double yPos;*/
 
 	std::string name;
 	int level;
-	int trickStat;
-	int styleStat;
+	/*int trickStat;
+	int styleStat;*/
 	int exp;
 	int expNext;
 
-	int strength;
-	//int tricks;
-	int speed;
-	//int style;
-	int boost;
-	int vitality;
-	int charisma;
+	//int strength;
+	////int tricks;
+	//int speed;
+	////int style;
+	//int boost;
+	//int vitality;
+	//int charisma;
 
 	//dig skills
-	int barrowSkill;
+	/*int barrowSkill;
 	int stackSkill;
 	int shapeSkill;
-	int vegetationSkill;
+	int vegetationSkill;*/
 
-	int hp;
+	/*int hp;
 	int hpMax;
 	int stamina;
 	int staminaMax;
 
 	int statPoints;
-	int skillPoints;
+	int skillPoints;*/
 };
 

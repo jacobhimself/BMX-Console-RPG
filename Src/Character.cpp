@@ -3,24 +3,25 @@ using namespace std;
 
 Character::Character()
 {
-	this-> xPos = 0.0;
-	this->yPos = 0.0;
+	//this-> xPos = 0.0;
+	//this->yPos = 0.0;
 
 	this->name = "NONE";
 	this->level = 1;
 	this->exp = 0;
 	this->expNext = 0;
+	this->masterTrickListIndices = {};
 
-	this->strength = 0;
+	/*this->strength = 0;
 	this->trickStat = 0;
 	this->speed = 0;
 	this->styleStat = 0;
 	this->boost = 0;
 	this->vitality = 0;
-	this->charisma = 0;
+	this->charisma = 0;*/
 
 	//dig skills
-	this->barrowSkill = 0;
+	/*this->barrowSkill = 0;
 	this->stackSkill = 0;
 	this->shapeSkill = 0;
 	this->vegetationSkill = 0;
@@ -31,7 +32,7 @@ Character::Character()
 	this->staminaMax = 0;
 
 	this->statPoints = 0;
-	this->skillPoints = 0;
+	this->skillPoints = 0;*/
 }
 Character::~Character()
 {
@@ -42,9 +43,9 @@ void Character::printStats()
 {
 	cout << "Character Sheet =" << endl;
 
-	cout << "xPos = " << this->xPos << endl;
+	/*cout << "xPos = " << this->xPos << endl;
 	cout << "yPos = " << this->yPos << endl;
-	cout << endl;
+	cout << endl;*/
 
 	cout << "Name = " << this->name << endl;
 	cout << "Level = " << this->level << endl;
@@ -53,16 +54,16 @@ void Character::printStats()
 	//std::cout << std::setw(10) << std::setfill('=') << std::endl;
 	cout << endl;
 
-	cout << "Strength = " << this->strength << endl;
-	cout << "Trick Stat = " << this->trickStat << endl;
-	cout << "Style Stat = " << this->styleStat << endl;
-	cout << "Boost = " << this->boost << endl;
-	cout << "Vitality = " << this->vitality << endl;
-	cout << "Charisma = " << this->charisma << endl;
-	//std::cout << std::setw(10) << std::setfill('=') << std::endl;
-	cout << endl;
+	//cout << "Strength = " << this->strength << endl;
+	//cout << "Trick Stat = " << this->trickStat << endl;
+	//cout << "Style Stat = " << this->styleStat << endl;
+	//cout << "Boost = " << this->boost << endl;
+	//cout << "Vitality = " << this->vitality << endl;
+	//cout << "Charisma = " << this->charisma << endl;
+	////std::cout << std::setw(10) << std::setfill('=') << std::endl;
+	//cout << endl;
 
-	cout << "Barrow Skill = " << this->barrowSkill << endl;
+	/*cout << "Barrow Skill = " << this->barrowSkill << endl;
 	cout << "Stack Skill = " << this->stackSkill << endl;
 	cout << "Shape Skill = " << this->shapeSkill << endl;
 	cout << "Vegetation Skill = " << this->vegetationSkill << endl;
@@ -73,46 +74,46 @@ void Character::printStats()
 
 	cout << "Stat Points = " << this->statPoints << endl;
 	cout << "Skill Points = " << this->skillPoints << endl;
-	cout << endl;
+	cout << endl;*/
 }
 
 void Character::initialise(const std::string name)
 {
-	this->xPos = 0.0;
-	this->yPos = 0.0;
+	/*this->xPos = 0.0;
+	this->yPos = 0.0;*/
 
 	this->masterTrickListIndices = { 1,3,5 };
 
 	this->name = name;
-	this->trickStat = 10;
-	this->styleStat = 1;
+	/*this->trickStat = 10;
+	this->styleStat = 1;*/
 	this->level = 1;
 	this->exp = 0;
 	this->expNext = static_cast<int>((50 / 3) * (pow(level, 3) -
 		6 * pow(level, 3) +
 		(17 * level) - 11));
 
-	this->strength = 0;
-	//this->tricks = 0;
-	this->speed = 0;
-	//this->style = 0;
-	this->boost = 0;
-	this->vitality = 0;
-	this->charisma = 0;
+	//this->strength = 0;
+	////this->tricks = 0;
+	//this->speed = 0;
+	////this->style = 0;
+	//this->boost = 0;
+	//this->vitality = 0;
+	//this->charisma = 0;
 
-	//dig skills
-	this->barrowSkill = 0;
-	this->stackSkill = 0;
-	this->shapeSkill = 0;
-	this->vegetationSkill = 0;
+	////dig skills
+	//this->barrowSkill = 0;
+	//this->stackSkill = 0;
+	//this->shapeSkill = 0;
+	//this->vegetationSkill = 0;
 
-	this->hp = 0;
-	this->hpMax = (this->vitality * 2) + (this->strength / 2);
-	this->stamina = 0;
-	this->staminaMax = this->vitality + (this->strength / 2);
+	//this->hp = 0;
+	//this->hpMax = (this->vitality * 2) + (this->strength / 2);
+	//this->stamina = 0;
+	//this->staminaMax = this->vitality + (this->strength / 2);
 
-	this->statPoints = 0;
-	this->skillPoints = 0;
+	//this->statPoints = 0;
+	//this->skillPoints = 0;
 }
 
 void Character::levelUp()
@@ -128,22 +129,14 @@ void Character::levelUp()
 				6 * pow(level, 3) +
 				(17 * level) - 11));
 
-		this->statPoints++;
-		this->skillPoints++;
+		/*this->statPoints++;
+		this->skillPoints++;*/
 	}
 }
 
 void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
 {
-		//Print Trick Vector for player to see
-		for (unsigned int i = 0; i < trickListIn.size(); i++)
-		{
-			cout << "Trick Index: " << i << endl;
-			trickListIn[i].printTrick();
-			cout << endl;
-		}
-
-		//Using an array of indices from the main list, populate the player tricklist
+		//Populate the player tricklist with tricks from the main list
 		for (unsigned int i = 0; i < masterTrickListIndices.size(); i++)
 		{
 			playerTrickList.push_back(trickListIn[masterTrickListIndices[i]]);
@@ -154,7 +147,7 @@ void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
 		cout << "Player Tricks" << endl;
 		for (unsigned int i = 0; i < playerTrickList.size(); i++)
 		{
-			cout << i;
+			cout << "Trick Index: " << i << endl;
 			playerTrickList[i].printTrick();
 			cout << endl;
 		}
@@ -173,7 +166,7 @@ void Character::UpdatePlayerTricks(vector<Trick> trickListIn)
 	}
 
 	bool validChoice = false;
-	int choice;
+	unsigned int choice;
 	while (!validChoice)
 	{
 	cout << "Enter the index of your trick to add it to your trick list" << endl;
@@ -200,6 +193,7 @@ void Character::UpdatePlayerTricks(vector<Trick> trickListIn)
 	}
 }
 
+//Used to debug and check current player tricks
 void Character::printTricks()
 {
 	for (unsigned int i = 0; i < playerTrickList.size(); i++)

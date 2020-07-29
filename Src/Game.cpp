@@ -19,7 +19,7 @@ void Game::initGame()
 {
 	createNewCharacter();
 	GameIO gIO;
-	trickList = gIO.LoadTricks();
+	completeTrickList = gIO.LoadTricks();
 }
 
 void Game::mainMenu()
@@ -80,8 +80,8 @@ void Game::mainMenu()
 		/*GameIO gIO;
 		gIO.LoadTricks();*/
 
-		characters[0].LoadPlayerTricks(trickList);
-		characters[0].UpdatePlayerTricks(trickList);
+		characters[0].LoadPlayerTricks(completeTrickList);
+		characters[0].UpdatePlayerTricks(completeTrickList);
 		
 		break;
 	}
