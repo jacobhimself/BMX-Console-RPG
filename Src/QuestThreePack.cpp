@@ -1,8 +1,9 @@
 #include "QuestThreePack.h"
 
-QuestThreePack::QuestThreePack()
+QuestThreePack::QuestThreePack(Character player)
 {
 	setLength = 3;
+	currentPlayer = player;
 	introduction();
 }
 QuestThreePack::~QuestThreePack()
@@ -12,7 +13,7 @@ QuestThreePack::~QuestThreePack()
 
 void QuestThreePack::introduction()
 {
-	cout << "Hello Player " << endl;
+	cout << "Hello " << currentPlayer.getName() << endl;
 	cout << "Welcome to your first contest " << endl;
 	cout << "There are three jumps for you to hit " << endl;
 	cout << "The tricks you decide to perform are up to you " << endl;

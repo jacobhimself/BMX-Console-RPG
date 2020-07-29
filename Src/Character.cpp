@@ -153,16 +153,18 @@ void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
 		}
 }
 
+//Generally this function would be used when levelling up
 void Character::UpdatePlayerTricks(vector<Trick> trickListIn)
 {
 	cout << "Congratulations, " << this->getName() << ", you have earned a new trick slot." << endl;
 	cout << "Choose from the tricks shown below to add a new trick to your trick list." << endl;
+	cout << endl;
+	
 	//Print Trick Vector for player to see
 	for (unsigned int i = 0; i < trickListIn.size(); i++)
 	{
 		cout << "Trick Index: " << i << endl;
 		trickListIn[i].printTrick();
-		cout << endl;
 	}
 
 	bool validChoice = false;
