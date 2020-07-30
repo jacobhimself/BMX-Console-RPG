@@ -19,7 +19,8 @@ void Game::initGame()
 {
 	createNewCharacter();
 	GameIO gIO;
-	trickList = gIO.LoadTricks();
+	completeTrickList = gIO.LoadTricks();
+	characters[0].LoadPlayerTricks(completeTrickList);
 }
 
 void Game::mainMenu()
@@ -48,7 +49,7 @@ void Game::mainMenu()
 		playing = false;
 		break;
 	case 1: {
-		QuestThreePack threePack;
+		QuestThreePack threePack(&characters[activeCharacter]);
 		break; }
 		//Travel
 		//Shop
@@ -73,11 +74,13 @@ void Game::mainMenu()
 		//Load Characters
 	case 8:
 		//loadCharacters();
+		characters[0].printTricks();
 		break;
 	case 9: {
 		//test functions
 		/*GameIO gIO;
 		gIO.LoadTricks();*/
+		characters[0].UpdatePlayerTricks(completeTrickList);
 		
 		break;
 	}

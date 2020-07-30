@@ -30,7 +30,7 @@ public:
 	//Modifiers
 
 private:
-	vector<Trick> trickList;
+	vector<Trick> completeTrickList;
 	int choice;
 	bool playing;
 

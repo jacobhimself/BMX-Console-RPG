@@ -1,3 +1,6 @@
 Tabletop, 1, 5,
 No Hander, 2, 8,
 Tailwhip, 3, 10,
+Backie, 4, 15,
+Frontie, 5, 20,
+Kangaroo Flip, 6, 100,
