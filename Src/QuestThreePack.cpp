@@ -1,9 +1,9 @@
 #include "QuestThreePack.h"
 
-QuestThreePack::QuestThreePack(Character player)
+QuestThreePack::QuestThreePack(Character *player)
 {
 	setLength = 3;
-	currentPlayer = player;
+	currentPlayer = *player;
 	introduction();
 }
 QuestThreePack::~QuestThreePack()
@@ -40,15 +40,9 @@ void QuestThreePack::hitSet()
 
 void QuestThreePack::printTrickList()
 {
-	cout << "0: X-Up " << endl;
-	cout << "1: No Hander " << endl;
-	cout << "2: Tabletop " << endl;
-	cout << "3: Turndown " << endl;
-	cout << "4: Nothing " << endl;
-	cout << "5: Barspin " << endl;
-	cout << "6: Tailwhip " << endl;
-	cout << endl;
-	cout << endl;
+
+	cout << "Your TrickList" << endl;
+	currentPlayer.printTricks();
 	
 }
 

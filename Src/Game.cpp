@@ -49,7 +49,7 @@ void Game::mainMenu()
 		playing = false;
 		break;
 	case 1: {
-		QuestThreePack threePack;
+		QuestThreePack threePack(&characters[activeCharacter]);
 		break; }
 		//Travel
 		//Shop

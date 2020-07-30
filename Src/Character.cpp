@@ -200,7 +200,7 @@ void Character::printTricks()
 {
 	for (unsigned int i = 0; i < playerTrickList.size(); i++)
 	{
-		cout << playerTrickList[i].getName() << endl;
+		cout << i << ": " << playerTrickList[i].getName() << endl;
 		cout << endl;
 	}
 }

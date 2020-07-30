@@ -28,7 +28,7 @@ public:
 	inline const int& getLevel() const { return this->level; }
 	inline const int& getExp() const { return this->exp; }
 	inline const int& getExpNext() const { return this->expNext; }
-	//inline const vector<Trick>& getTrickList() const { return this->playerTrickList; }
+	inline const vector<Trick>& getTrickList() const { return this->playerTrickList; }
 
 	/*inline const int& getStrength() const { return this->strength; }
 	inline const int& getTrickStat() const { return this->trickStat; }
