@@ -2,8 +2,8 @@
 
 QuestThreePack::QuestThreePack(Character *player)
 {
-	setLength = 3;
-	currentPlayer = *player;
+	currentPlayer = player;
+	playerTrickList = currentPlayer->getTrickList();
 	introduction();
 }
 QuestThreePack::~QuestThreePack()
@@ -13,9 +13,9 @@ QuestThreePack::~QuestThreePack()
 
 void QuestThreePack::introduction()
 {
-	cout << "Hello " << currentPlayer.getName() << endl;
+	cout << "Hello " << currentPlayer->getName() << endl;
 	cout << "Welcome to your first contest " << endl;
-	cout << "There are three jumps for you to hit " << endl;
+	cout << "There are " << setLength << " jumps for you to hit " << endl;
 	cout << "The tricks you decide to perform are up to you " << endl;
 	cout << "But remember... your skill level only goes so far and you only have so much time in the air... " << endl;
 	cout << endl;
@@ -26,7 +26,7 @@ void QuestThreePack::introduction()
 
 void QuestThreePack::hitSet()
 {
-	printTrickList();
+	currentPlayer->printTricks();
 	int currentJumpNum = 1;
 	while (currentJumpNum <= setLength)
 	{
@@ -38,21 +38,15 @@ void QuestThreePack::hitSet()
 
 }
 
-void QuestThreePack::printTrickList()
-{
 
-	cout << "Your TrickList" << endl;
-	currentPlayer.printTricks();
-	
-}
 
 void QuestThreePack::hitJump(int jumpNum)
 {
 	cout << "You are about to hit jump number " << jumpNum << endl;
 	cout << "Select your trick from the trick options shown above" << endl;
 	cin >> currentTrick;
-	currentTrick = currentTrick % std::size(this->trickList);
-	cout << "You selected " << trickList[currentTrick] << " on jump " << jumpNum << ". " << endl;
+	currentTrick = currentTrick % std::size(playerTrickList);
+	cout << "You selected " << playerTrickList[currentTrick].getName() << " on jump " << jumpNum << ". " << endl;
 	cout << endl;
 	cout << endl;
 }

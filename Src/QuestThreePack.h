@@ -11,20 +11,11 @@ public:
 	void introduction();
 	void hitSet();
 	void hitJump(int jumpNum);
-	void printTrickList();
 
 	int currentTrick;
-	int setLength;
+	int setLength = 3;
 private:
-	Character currentPlayer;
-	string trickList[7] = {
-		"X-Up",
-		"No Hander",
-		"Tabletop",
-		"Turndown",
-		"Nothing",
-		"Barspin",
-		"Tailwhip" };
-
+	Character* currentPlayer;
+	vector<Trick> playerTrickList;
 };
 
