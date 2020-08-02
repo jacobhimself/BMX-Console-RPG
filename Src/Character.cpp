@@ -144,13 +144,13 @@ void::Character::LoadPlayerTricks(vector<Trick> trickListIn)
 
 
 		//Print the player trick list
-		cout << "Player Tricks" << endl;
+		/*cout << "Player Tricks" << endl;
 		for (unsigned int i = 0; i < playerTrickList.size(); i++)
 		{
 			cout << "Trick Index: " << i << endl;
 			playerTrickList[i].printTrick();
 			cout << endl;
-		}
+		}*/
 }
 
 //Generally this function would be used when levelling up
