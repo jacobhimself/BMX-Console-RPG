@@ -17,6 +17,7 @@ public:
 
 	//Getters
 	inline string getName() { return this->name; }
+	inline int getDifficulty() { return this->difficulty; }
 
 private:
 	string name;

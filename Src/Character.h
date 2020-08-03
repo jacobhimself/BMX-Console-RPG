@@ -15,6 +15,7 @@ public:
 	void printStats();
 	void initialise(const std::string name);
 	void levelUp();
+	bool executeTrick(Trick trick);
 
 	//Setters
 	void LoadPlayerTricks(vector<Trick> trickListIn);
@@ -29,6 +30,7 @@ public:
 	inline const int& getExp() const { return this->exp; }
 	inline const int& getExpNext() const { return this->expNext; }
 	inline const vector<Trick>& getTrickList() const { return this->playerTrickList; }
+	inline const int& getTrickStat() const { return this->trickStat; }
 
 	/*inline const int& getStrength() const { return this->strength; }
 	inline const int& getTrickStat() const { return this->trickStat; }
@@ -68,7 +70,7 @@ private:
 	int expNext;
 
 	//int strength;
-	////int tricks;
+	int trickStat;
 	//int speed;
 	////int style;
 	//int boost;

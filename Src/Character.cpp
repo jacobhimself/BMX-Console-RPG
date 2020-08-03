@@ -11,6 +11,7 @@ Character::Character()
 	this->exp = 0;
 	this->expNext = 0;
 	this->masterTrickListIndices = {};
+	this->trickStat = 10;
 
 	/*this->strength = 0;
 	this->trickStat = 0;
@@ -92,6 +93,7 @@ void Character::initialise(const std::string name)
 	this->expNext = static_cast<int>((50 / 3) * (pow(level, 3) -
 		6 * pow(level, 3) +
 		(17 * level) - 11));
+	this->trickStat = 10;
 
 	//this->strength = 0;
 	////this->tricks = 0;
@@ -203,4 +205,24 @@ void Character::printTricks()
 		cout << i << ": " << playerTrickList[i].getName() << endl;
 		cout << endl;
 	}
+}
+
+bool Character::executeTrick(Trick trick)
+{
+	//Difficult tricks might have difficulty of 100
+	//if rider has trick skill of 10 then they only have a 10% chance of landing
+	//there is room for this to become more complex later on but this is just a tribute
+	int i = rand() % trick.getDifficulty();
+	cout << "random number " << i << endl;
+
+	if (i <= this->trickStat)
+	{
+		cout << "Sick " << trick.getName() << endl;
+	}
+	else
+	{
+		cout << "You Bailed" << endl;
+	}
+	
+	return this->trickStat > i;
 }
