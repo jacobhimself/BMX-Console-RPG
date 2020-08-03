@@ -46,7 +46,7 @@ void QuestThreePack::hitJump(int jumpNum)
 	cout << "Select your trick from the trick options shown above" << endl;
 	cin >> currentTrick;
 	currentTrick = currentTrick % std::size(playerTrickList);
-	cout << "You selected " << playerTrickList[currentTrick].getName() << " on jump " << jumpNum << ". " << endl;
+	currentPlayer->executeTrick(playerTrickList[currentTrick]);
 	cout << endl;
 	cout << endl;
 }

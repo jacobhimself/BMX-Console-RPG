@@ -13,7 +13,7 @@ public:
 	void hitJump(int jumpNum);
 
 	int currentTrick;
-	int setLength = 3;
+	int setLength = 10;
 private:
 	Character* currentPlayer;
 	vector<Trick> playerTrickList;
